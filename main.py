@@ -41,7 +41,7 @@ def main():
     # Setup and run crew
     crew_setup = CrewSetup(agents_config, tasks_config)
     crew = crew_setup.setup_crew()
-    result = crew.kickoff(inputs=project_inputs.dict())
+    result = crew.kickoff(inputs=project_inputs.model_dump())
     
     # Analyze results
     costs = analyzer.calculate_costs(crew)
